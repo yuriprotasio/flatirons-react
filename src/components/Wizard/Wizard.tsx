@@ -39,7 +39,7 @@ export function Wizard() {
               }}
               icon={
                 <WizardIcon isActive={activeStep >= index}>
-                  <span>{index + 1}</span>
+                  <span data-testid={`${activeStep >= index ? 'active-' : ''}` + index + '-id'}>{index + 1}</span>
                 </WizardIcon>
               }
             >

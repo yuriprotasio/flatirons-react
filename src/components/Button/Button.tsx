@@ -1,6 +1,7 @@
 import { ButtonContainer } from './styles'
 
 type ButtonProps = {
+  dataTestId?: string
   text: string
   hasEmptyFields?: boolean
   variant: 'default' | 'nobackground'
@@ -8,6 +9,7 @@ type ButtonProps = {
 }
 
 export function Button({
+  dataTestId = 'button-id',
   text = '',
   hasEmptyFields,
   variant,
@@ -15,7 +17,7 @@ export function Button({
 }: ButtonProps) {
   return (
     <ButtonContainer
-      data-testid="button-id"
+      data-testid={dataTestId}
       disabled={hasEmptyFields}
       variant={variant}
       onClick={onClick}

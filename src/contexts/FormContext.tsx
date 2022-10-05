@@ -10,14 +10,14 @@ import { SignupFormProps, ProviderFormProps } from '../components/Form/types'
 
 export type FormContextType = {
   form: SignupFormProps
-  providerForm: ProviderFormProps
   setForm: Dispatch<SetStateAction<SignupFormProps>>
+  providerForm: ProviderFormProps
+  setProviderForm: Dispatch<SetStateAction<ProviderFormProps>>
   activeStep: number
   setActiveStep: Dispatch<SetStateAction<number>>
-  setProviderForm: Dispatch<SetStateAction<ProviderFormProps>>
 }
 
-const FormContext = createContext<FormContextType>({} as FormContextType)
+export const FormContext = createContext<FormContextType>({} as FormContextType)
 
 interface FormProviderProps {
   children: ReactNode

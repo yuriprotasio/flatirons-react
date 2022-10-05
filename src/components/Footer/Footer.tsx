@@ -6,14 +6,14 @@ import { useContextForm } from '../../contexts/FormContext'
 type FooterProps = {
   showBack?: boolean
   hasEmptyFields?: boolean
-  handleSubmit?: () => void
+  onClick?: () => void
   hideSave?: boolean
 }
 
 export function Footer({
   showBack,
   hasEmptyFields,
-  handleSubmit,
+  onClick,
   hideSave,
 }: FooterProps) {
   const { activeStep, setActiveStep } = useContextForm()
@@ -35,6 +35,7 @@ export function Footer({
         >
           {showBack && (
             <Button
+              dataTestId="goback-id"
               variant="nobackground"
               text="Go Back"
               onClick={() => setActiveStep(activeStep - 1)}
@@ -49,10 +50,11 @@ export function Footer({
         >
           {!hideSave && (
             <Button
+              dataTestId="save-id"
               variant="default"
               text="Save And Continue"
               hasEmptyFields={hasEmptyFields}
-              onClick={handleSubmit}
+              onClick={onClick}
             ></Button>
           )}
         </Grid>

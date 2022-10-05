@@ -2,11 +2,8 @@ import { Wizard } from '../../components/Wizard/Wizard'
 import { Grid, Box } from '@mui/material'
 import { GradientBackground } from './styles'
 import { Form } from '../../components/Form/Form'
-import { useContextForm } from '../../contexts/FormContext'
 
 export function Home() {
-  const { activeStep } = useContextForm()
-
   return (
     <>
       <Grid container>
@@ -22,7 +19,7 @@ export function Home() {
               marginRight: 'auto',
             }}
           >
-            <Wizard activeStep={activeStep} />
+            <Wizard />
           </Box>
           <Form></Form>
         </Grid>

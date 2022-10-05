@@ -36,7 +36,7 @@ export function ProviderForm() {
         title="Provider Information"
         description="Tell us about your practice."
       ></Header>
-      <Grid container justifyContent={'center'}>
+      <Grid data-testid="provider-formid" container justifyContent={'center'}>
         <Grid item xs={12}>
           <FormContainer onSubmit={handleSubmit(onSubmit)}>
             <Grid container justifyContent={'center'}>
@@ -75,7 +75,7 @@ export function ProviderForm() {
                 <Footer
                   showBack={true}
                   hasEmptyFields={hasEmptyFields}
-                  handleSubmit={handleSubmit(onSubmit)}
+                  onClick={handleSubmit(onSubmit)}
                 ></Footer>
               </Grid>
             </Grid>
