@@ -4,20 +4,21 @@ type ButtonProps = {
   text: string
   hasEmptyFields?: boolean
   variant: 'default' | 'nobackground'
-  method: (() => void) | undefined
+  onClick: (() => void) | undefined
 }
 
 export function Button({
   text = '',
   hasEmptyFields,
   variant,
-  method,
+  onClick,
 }: ButtonProps) {
   return (
     <ButtonContainer
+      data-testid="button-id"
       disabled={hasEmptyFields}
       variant={variant}
-      onClick={method}
+      onClick={onClick}
     >
       {text}
     </ButtonContainer>

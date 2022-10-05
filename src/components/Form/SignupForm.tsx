@@ -57,15 +57,15 @@ export function SignupForm() {
     setActiveStep(1)
   }
 
-  const handleLanguageDelete = (event: any, value: any) => {
+  const handleLanguageDelete = (event: any, value: string) => {
     event.preventDefault()
     const indexFound = languages.findIndex((language) => language === value)
     languages.splice(indexFound, 1)
     setLanguages([...languages])
   }
 
-  function isValidPhoneNumber(value: any) {
-    const { isValid } = phone(value)
+  function isValidPhoneNumber(value: string | undefined) {
+    const { isValid } = phone(value!)
     return isValid
   }
 

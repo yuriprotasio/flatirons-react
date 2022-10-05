@@ -37,7 +37,7 @@ export function Footer({
             <Button
               variant="nobackground"
               text="Go Back"
-              method={() => setActiveStep(activeStep - 1)}
+              onClick={() => setActiveStep(activeStep - 1)}
             ></Button>
           )}
         </Grid>
@@ -52,7 +52,7 @@ export function Footer({
               variant="default"
               text="Save And Continue"
               hasEmptyFields={hasEmptyFields}
-              method={handleSubmit}
+              onClick={handleSubmit}
             ></Button>
           )}
         </Grid>

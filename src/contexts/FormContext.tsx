@@ -8,7 +8,7 @@ import {
 } from 'react'
 import { SignupFormProps, ProviderFormProps } from '../components/Form/types'
 
-type FormContextType = {
+export type FormContextType = {
   form: SignupFormProps
   providerForm: ProviderFormProps
   setForm: Dispatch<SetStateAction<SignupFormProps>>
