@@ -17,7 +17,7 @@ React application using vite, typescript, styled-components and mui.
 ### Video walkthrough
 Link: [Video Walkthrough]()
 
-### Improvements
+### Improvements to do
 
 - Add e2e tests
 - Phone number validation for more countries
