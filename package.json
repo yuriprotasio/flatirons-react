@@ -6,17 +6,16 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc && vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "lint": "npx eslint src --ext .ts,.tsx --fix"
   },
   "dependencies": {
     "@mui/material": "^5.10.7",
-    "@mui/styled-engine-sc": "^5.10.6",
     "phone": "^3.1.28",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-hook-form": "^7.36.1",
-    "styled-components": "^5.3.6",
-    "zod": "^3.19.1"
+    "styled-components": "^5.3.6"
   },
   "devDependencies": {
     "@rocketseat/eslint-config": "^1.1.3",

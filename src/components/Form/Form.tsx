@@ -4,7 +4,7 @@ import { ProviderForm } from './ProviderForm'
 import { SignupForm } from './SignupForm'
 import { Container } from './styles'
 
-export function Form () {
+export function Form() {
   const { activeStep } = useContextForm()
 
   return (

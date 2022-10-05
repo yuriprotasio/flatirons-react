@@ -1,4 +1,4 @@
-import { createGlobalStyle, css } from "styled-components";
+import { createGlobalStyle, css } from 'styled-components'
 
 export const GlobalStyle = createGlobalStyle`
   ${({ theme }) => css`
@@ -17,7 +17,10 @@ export const GlobalStyle = createGlobalStyle`
       color: ${theme.colors['black-900']};
     }
 
-    body, input, textarea, button {
+    body,
+    input,
+    textarea,
+    button {
       font-family: 'Nunito Sans';
       font-weight: 400;
     }

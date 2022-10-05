@@ -9,8 +9,11 @@ export const WizardIcon = styled.div<WizardIconProps>`
     width: 24px;
     height: 24px;
 
-    background: ${isActive ? theme.colors['red-300'] : theme.colors['white-900']};
-    border: 2px solid ${isActive ? theme.colors['red-100'] : theme.colors['gray-100']};
+    background: ${isActive
+      ? theme.colors['red-300']
+      : theme.colors['white-900']};
+    border: 2px solid
+      ${isActive ? theme.colors['red-100'] : theme.colors['gray-100']};
     border-radius: 50%;
     text-align: center;
     line-height: 0;

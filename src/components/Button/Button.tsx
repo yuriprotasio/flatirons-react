@@ -7,8 +7,19 @@ type ButtonProps = {
   method: (() => void) | undefined
 }
 
-export function Button ({ text = '', hasEmptyFields, variant, method }: ButtonProps) {
+export function Button({
+  text = '',
+  hasEmptyFields,
+  variant,
+  method,
+}: ButtonProps) {
   return (
-    <ButtonContainer disabled={hasEmptyFields} variant={variant} onClick={method}>{text}</ButtonContainer>
+    <ButtonContainer
+      disabled={hasEmptyFields}
+      variant={variant}
+      onClick={method}
+    >
+      {text}
+    </ButtonContainer>
   )
 }

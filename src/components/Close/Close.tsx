@@ -1,7 +1,5 @@
 import { CloseContainer } from './styles'
 
-export function Close () {
-  return (
-    <CloseContainer>x</CloseContainer>
-  )
+export function Close() {
+  return <CloseContainer>x</CloseContainer>
 }

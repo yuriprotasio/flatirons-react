@@ -5,7 +5,7 @@ type HeaderProps = {
   description?: string
 }
 
-export function Header ({ title, description }: HeaderProps) {
+export function Header({ title, description }: HeaderProps) {
   return (
     <HeaderContainer>
       <h2>{title}</h2>
