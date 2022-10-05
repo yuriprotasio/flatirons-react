@@ -21,12 +21,12 @@ export const GlobalStyle = createGlobalStyle`
     input,
     textarea,
     button {
-      font-family: 'Nunito Sans';
+      font-family: ${theme.font.name.primary};
       font-weight: 400;
     }
 
     h2 {
-      font-family: 'Crimson Text';
+      font-family: ${theme.font.name.secondary};
       font-weight: 600;
     }
   `}

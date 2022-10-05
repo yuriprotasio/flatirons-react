@@ -9,9 +9,9 @@ export function Form() {
 
   return (
     <Container>
-      {activeStep === 0 && <SignupForm></SignupForm>}
-      {activeStep === 1 && <ProviderForm></ProviderForm>}
-      {activeStep === 2 && <ContactForm></ContactForm>}
+      {activeStep === 0 && <SignupForm />}
+      {activeStep === 1 && <ProviderForm />}
+      {activeStep === 2 && <ContactForm />}
     </Container>
   )
 }
