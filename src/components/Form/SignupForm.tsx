@@ -81,7 +81,10 @@ export function SignupForm() {
         description="Tell us about yourself."
       ></Header>
 
-      <FormContainer data-testid="signup-formid" onSubmit={handleSubmit(onSubmit)}>
+      <FormContainer
+        data-testid="signup-formid"
+        onSubmit={handleSubmit(onSubmit)}
+      >
         <Grid container justifyContent={'center'}>
           <Grid item xs={10} md={8}>
             <FormControl

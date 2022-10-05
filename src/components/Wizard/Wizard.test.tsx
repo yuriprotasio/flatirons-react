@@ -1,7 +1,7 @@
-import { screen } from '@testing-library/react';
-import { Wizard } from './Wizard';
+import { screen } from '@testing-library/react'
+import { Wizard } from './Wizard'
 import { customRender } from '../../utils/test-utils'
-import { FormContextType } from '../../contexts/FormContext';
+import { FormContextType } from '../../contexts/FormContext'
 
 describe('Wizard', () => {
   const context = {} as FormContextType
@@ -30,4 +30,4 @@ describe('Wizard', () => {
     expect(screen.queryByTestId('active-1-id')).toBeInTheDocument()
     expect(screen.queryByTestId('active-2-id')).toBeInTheDocument()
   })
-});
+})

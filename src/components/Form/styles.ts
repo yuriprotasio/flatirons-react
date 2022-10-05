@@ -17,6 +17,5 @@ export const FormContainer = styled.form`
       width: 100%;
       padding: 13px;
     }
-    `
-  }
+  `}
 `

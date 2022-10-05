@@ -1,7 +1,7 @@
-import { screen } from '@testing-library/react';
-import { Form } from './Form';
+import { screen } from '@testing-library/react'
+import { Form } from './Form'
 import { customRender } from '../../utils/test-utils'
-import { FormContextType } from '../../contexts/FormContext';
+import { FormContextType } from '../../contexts/FormContext'
 
 describe('Form', () => {
   const context = {} as FormContextType
@@ -30,4 +30,4 @@ describe('Form', () => {
     expect(screen.queryByTestId('provider-formid')).toEqual(null)
     expect(screen.queryByTestId('contact-formid')).toBeInTheDocument()
   })
-});
+})
