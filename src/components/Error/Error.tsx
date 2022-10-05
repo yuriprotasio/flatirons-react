@@ -1,6 +1,10 @@
 import { ErrorContainer } from "./styles";
 
-export function Error ({ text = 'This field is required.' }) {
+type ErrorProps = {
+  text?: string
+}
+
+export function Error ({ text = 'This field is required.' }: ErrorProps) {
   return (
     <ErrorContainer>{text}</ErrorContainer>
   )

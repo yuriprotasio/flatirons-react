@@ -22,7 +22,7 @@ export function Wizard ({ activeStep }: WizardProps) {
               },
               '& .MuiStepConnector-line': {
                 borderTopWidth: '2px',
-                borderColor: theme['gray-100']
+                borderColor: theme.colors['gray-100']
               }
             }}>
               <StepLabel sx={{
@@ -30,10 +30,10 @@ export function Wizard ({ activeStep }: WizardProps) {
                   fontFamily: 'Nunito Sans !important',
                   fontWeight: '700 !important',
                   marginTop: '2px !important',
-                  color: `${theme['gray-400']} !important`
+                  color: `${theme.colors['gray-400']} !important`
                 },
                 '& .Mui-active': {
-                  color: `${theme['red-300']} !important`
+                  color: `${theme.colors['red-300']} !important`
                 },
               }} icon={
                 <WizardIcon isActive={activeStep >= index}>

@@ -5,22 +5,29 @@ import { useState } from "react";
 import { DefaultTheme, useTheme } from "styled-components";
 import { SelectChangeEvent } from '@mui/material/Select';
 import { Footer } from "../Footer/Footer";
-import { Error } from "../../../../components/Error/Error";
+import { Error } from "../Error/Error";
 import { phone } from 'phone';
-import { useSignupForm } from "../../../../contexts/SignupFormContext";
-import { Header } from "../../../../components/Header/Header";
+import { useContextForm } from "../../contexts/FormContext";
+import { Header } from "../Header/Header";
+import { SignupFormProps } from "./types";
 
-export function SignupForm ({ setActiveStep }) {
-  const { form, setForm } = useSignupForm()
+export function SignupForm () {
+  const { setActiveStep, form, setForm } = useContextForm()
   const { register, getValues, handleSubmit, trigger, formState: { errors } } = useForm({ defaultValues: form });
   const options = ['English', 'Spanish', 'French', 'Chinese', 'Portuguese'];
   const [languages, setLanguages] = useState<string[]>(form.languages || []);
+  const [hasEmptyFields, setHasEmptyFields] = useState(() => hasEmpty())
+  const theme = useTheme();
 
-  const [hasEmptyFields, setHasEmptyFields] = useState(() => {
+  function checkHasEmptyFields () {
+    setHasEmptyFields(hasEmpty())
+  }
+
+  function hasEmpty () {
     const { firstName, languages, lastName, phoneNumber } = getValues()
     const hasEmptyFields = !firstName || !languages || !lastName || !phoneNumber
     return hasEmptyFields
-  })
+  }
 
   const handleSelect = (event: SelectChangeEvent<typeof languages>) => {
     const {
@@ -31,32 +38,10 @@ export function SignupForm ({ setActiveStep }) {
     );
   };
 
-  const ITEM_HEIGHT = 32;
-  const ITEM_PADDING_TOP = 4;
-  const MenuProps = {
-    PaperProps: {
-      style: {
-        maxHeight: ITEM_HEIGHT * 4.5 + ITEM_PADDING_TOP,
-        width: 350,
-      },
-    },
-  };
-
-  function onSubmit (data) {
+  function onSubmit (data: SignupFormProps) {
     setForm(data)
     setActiveStep(1)
   };
-
-  function getStyles(name: string, personName: readonly string[], theme: DefaultTheme) {
-    return {
-      fontWeight:
-        personName.indexOf(name) === -1
-          ? theme['red-300']
-          : theme['red-100'],
-    };
-  }
-
-  const theme = useTheme();
 
   const handleLanguageDelete = (event: any, value: any) => {
     event.preventDefault()
@@ -70,15 +55,9 @@ export function SignupForm ({ setActiveStep }) {
     return isValid
   }
 
-  function checkHasEmptyFields () {
-    const { firstName, languages, lastName, phoneNumber } = getValues()
-    const hasEmptyFields = !firstName || !languages || !lastName || !phoneNumber
-    setHasEmptyFields(hasEmptyFields)
-  }
-
   function isValidLanguages () {
     const { languages } = getValues()
-    return languages.length > 0
+    return languages && languages.length > 0
   }
 
   return (
@@ -117,32 +96,27 @@ export function SignupForm ({ setActiveStep }) {
                           label={value}
                           onDelete={(event) => {handleLanguageDelete(event, value)}}
                           deleteIcon={<span style={{
-                            color: theme['red-800'],
+                            color: theme.colors['red-800'],
                             fontWeight: 500,
                             fontSize: '16px'
                           }}>x</span>}
                           sx={{
                             zIndex: 9999,
-                            background: theme['red-100'],
+                            background: theme.colors['red-100'],
                             padding: '4px 8px 4px 8px',
                             borderRadius: '12px',
                             marginRight: '5px',
                             fontWeight: '700',
                             fontSize: '12px',
-                            color: theme['red-800']
+                            color: theme.colors['red-800']
                           }}
                         />
                       ))}
                     </Box>
                   )}
-                  MenuProps={MenuProps}
                 >
                   {options.map((name) => (
-                    <MenuItem
-                      key={name}
-                      value={name}
-                      style={getStyles(name, languages, theme)}
-                    >
+                    <MenuItem key={name} value={name}>
                       {name}
                     </MenuItem>
                   ))}

@@ -1,16 +1,16 @@
 import { ThemeProvider } from 'styled-components'
-import { SignupFormProvider } from './contexts/SignupFormContext'
+import { FormProvider } from './contexts/FormContext'
 import { Home } from './pages/Home'
 import { GlobalStyle } from './styles/global'
 import { defaultTheme } from './styles/themes/default'
 
 export function App() {
   return (
-    <SignupFormProvider>
+    <FormProvider>
       <ThemeProvider theme={defaultTheme}>
         <GlobalStyle />
         <Home />
       </ThemeProvider>
-    </SignupFormProvider>
+    </FormProvider>
   )
 }

@@ -1,5 +1,7 @@
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 
 export const ErrorContainer = styled.span`
-  color: ${props => props.theme['red-700']}
+  ${({ theme }) => css`
+    color: ${theme.colors['red-700']}
+  `}
 `

@@ -2,9 +2,9 @@ import { ButtonContainer } from './styles'
 
 type ButtonProps = {
   text: string
-  hasErrors: boolean
-  hasEmptyFields: boolean
-  setSubmitted: any
+  hasEmptyFields?: boolean
+  variant: 'default' | 'nobackground'
+  method: (() => void) | undefined
 }
 
 export function Button ({ text = '', hasEmptyFields, variant, method }: ButtonProps) {
