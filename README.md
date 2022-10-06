@@ -15,7 +15,7 @@ React application using vite, typescript, styled-components and mui.
     yarn test
     
 ### Video walkthrough
-Link: [Video Walkthrough]()
+Link: [Video Walkthrough](https://share.vidyard.com/watch/darH9wjovF4JJD1d7WHg1p?)
 
 ### Improvements to do
 
